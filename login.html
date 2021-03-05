@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html manifest="manifest.appcache">
+    <head>
+        <!--Mergo-->
+        <!--Validimi i formave me Javascript-->
+        <meta charset="utf-8">
+        <title>Login | Restaurant Alinea</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!--Per Ikona-->
+        <link rel="stylesheet" href="style/all.css">
+        <script src="js/style.js"></script>
+        <link rel="stylesheet" href="style/style.css">
+    </head>
+    <header>
+      <div id="clock"></div>
+      <script>
+        setInterval(displayclock);
+        function displayclock(){
+          var time=new Date();
+          var hrs=time.getHours();
+          var min=time.getMinutes();
+          var sec=time.getSeconds();
+          
+          
+          if (hrs>= 7 && hrs <20)
+          {
+            var backi=document.body.style.backgroundImage = "url('img/morningmode1.jpg')";
+          }
+          else
+          {
+            var backi=document.body.style.backgroundImage = "url('img/darkmode.jpg')";
+          }
+          
+         if (hrs<10)
+         {
+           hrs='0'+hrs;
+         }
+         if (min<10) {
+           min='0'+min;
+         }
+         if (sec<10)
+         {
+           sec='0'+sec;
+         }
+         document.getElementById('clock').innerHTML=hrs + ":" +min + ":" + sec  ;
+        }
+      </script>
+    </header>
+
+    <body id="mergologin">
+        <script>
+        function validate(){
+  var password = document.getElementById("password").value;
+  var email = document.getElementById("email").value;
+  var error_message = document.getElementById("error_message");
+  
+  error_message.style.padding = "10px";
+  
+  var text;
+  if(password.length < 8){
+    text = "Please Enter Password with 8+ Characters";
+    error_message.innerHTML = text;
+    return false;
+  }
+
+  if(email.indexOf("@") == -1 || email.length < 6){
+    text = "Please Enter valid Email";
+    error_message.innerHTML = text;
+    return false;
+  }
+  alert("Form Submitted Successfully!");
+  return true;
+}</script>
+       
+        <div class="wrapper">
+            <h2>Login</h2>
+            <div id="error_message">
+               
+            </div>
+            <form action="" id="myform" onsubmit = "return validate();">
+              <div class="input_field">
+                  <input type="text" placeholder="Email" id="email">
+              </div>
+              <div class="input_field">
+                <input type="password" placeholder="Password" id="password">
+            </div>
+              <div class="sumbiti">
+                  <input type="submit">
+              </div>
+            </form>
+          </br>
+        </br>
+            <h2 id="mergocreateaccount">Don't have an account?</h2>
+            <h2 id="mergocreateaccount"><a href="register.html">Create one now</a></h2>
+          </div>
+          
+         
+
+    </body>
+<!--Mergo-->
+</html>

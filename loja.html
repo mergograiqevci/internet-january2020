@@ -1,0 +1,181 @@
+<!--Jetlira-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GAME</title>
+    
+    <style>
+        
+
+#canvas {
+    position: absolute;
+    display: block;
+    border: 2px solid orange;
+    padding: auto;
+    background-color:#333333;
+    margin: auto;
+}
+
+#div{
+    position: absolute;
+    display: block;
+	width:300px;
+    border:2px solid yellow;
+    background-color:#333333;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.4);
+    margin: auto;
+    padding: 8px;
+	top: 450px;
+}
+button#first{
+    position: relative;
+    display: block;
+    left: 185px;
+    top: 350px;
+}
+
+button#second{
+    position: relative;
+    display: block;
+    left: 105px;
+    top: 328px;
+}
+
+button#third{
+    position: relative;
+    display: block;
+    margin-top: 5px;
+    left: 145px;
+    top: 275px;
+}
+
+button#fourth{
+    position: relative;
+    display: block;
+    left: 145px;
+    top: 310px;
+}
+    </style>
+    <script>
+        
+
+let game = {
+     players: {
+         'player1':{x:180,y:30, score:0}
+     },
+        
+     points: {
+         'point1': {x:60,y:60}
+     }
+  }
+
+window.onload = function(){
+
+    let div = document.getElementsByTagName ("div")[0];
+    
+    let p = div.getElementsByTagName("p")[0];
+    div.style.display = "none";
+
+    alert("This is a simple game where you just have to follow the white target, and, have some fun!!");
+    let canvas = document.getElementById("canvas");
+    let ctx = canvas.getContext("2d");
+    
+    //painter
+    let render = () => {
+        let plY, plX, pX, pY;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for(id in game.players){
+        
+            for(pt in game.points){
+                ctx.fillStyle = 'white';
+                ctx.fillRect(game.points[pt].x, game.points[pt].y, 30, 30);
+            }
+        
+            ctx.fillStyle = 'red';
+            ctx.fillRect(game.players[id].x, game.players[id].y, 30, 30);
+        }
+            plX = game.players['player1'].x;
+            plY = game.players['player1'].y;
+        
+            pX = game.points['point1'].x;
+            pY = game.points['point1'].y;
+            if(plX == pX && plY == pY){
+                game.players['player1'].score = game.players['player1'].score+=1;
+               let node = game.players['player1'].score; 
+               p.innerText = "Congratulations! Your score now is " + node;
+               setTimeout(function(){
+                   div.style.display = "block"
+               }, 500);
+               div.style.display = "none"
+                let result = new Array(2);
+                for(let i = 0; i < result.length; i++){
+                        result[i] = Math.round((Math.random()*300)/30)*30;
+                }
+              game.points['point1'].x = result[0];
+              game.points['point1'].y = result[1];
+            }
+        requestAnimationFrame(render);
+    }
+    
+    render();
+    
+    //movement section
+    let btn = document.getElementsByTagName("button");
+    
+    //right
+    btn[0].addEventListener("click", function(){
+        let x = game.players['player1'].x;
+        if(x >= 300){
+            game.players['player1'].x = 300;
+        }else{
+            game.players['player1'].x = game.players['player1'].x+30;
+        }
+    });
+    
+    //left
+    btn[1].addEventListener("click", function(){
+        let x = game.players['player1'].x;
+        if(x <= 0){
+            game.players['player1'].x = 0;
+        }else{
+            game.players['player1'].x = game.players['player1'].x-30;
+        }
+    });
+    
+    //up
+    btn[2].addEventListener("click", function(){
+        let y = game.players['player1'].y;
+        if(y <= 0){
+            game.players['player1'].y = 0;
+        }else{
+            game.players['player1'].y = game.players['player1'].y-30;
+        }
+        
+    });
+    
+    //down
+    btn[3].addEventListener("click", function(){
+        let y = game.players['player1'].y;
+        if(y >= 300){
+            game.players['player1'].y = 300;
+        }else{
+            game.players['player1'].y = game.players['player1'].y+30;
+        }
+    });
+}
+    </script>
+    </head>
+    <body>
+        <canvas id="canvas" width="300" height="300"></canvas>
+		
+        <button id="first">&#8594;</button>
+        <button id="second">&#8592;</button>
+        <button id="third">&#8593;</button>
+        <button id="fourth">&#8595;</button>
+        
+        <div id="div">
+            <p style="color:white;">Congartulations! Your score now is</p>
+        </div>
+    </body>
+</html>

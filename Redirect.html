@@ -1,0 +1,44 @@
+<html>
+    <head>
+         <link rel="stylesheet" type="text/css" href="Style.css"> 
+        <style>
+            #Rsec {
+                text-align: center;
+                padding-top:30px;
+                font-size: 50px;
+                color:white;
+                font-family: "Lucida Sans Unicode",Arial,Helvetica, sans-serif;
+            }
+            
+            
+        </style>
+        <title>Restauranti</title>
+        <meta http-equiv="refresh" content="4; url=login.html">
+    </head>
+    <body style="background-color:#333333;" onload="changeText();">
+        <div style="text-align:center; padding-top:120px; color:white; font-family: Lucida Sans Unicode,Arial,Helvetica, sans-serif;">
+            <h1>Your account is being created!<br> You will be redirected in:</h1>
+        </div>
+        <div id="Rsec">
+            <p></p>
+        </div>
+
+<script type=text/javascript>
+var delay="1"; //how many seconds you wnat the delay to be
+var count='0';
+var Texts=new Array();
+Texts[0]="4";
+Texts[1]="3";
+Texts[2]="2";
+Texts[3]="1";
+Texts[4]="0";
+function changeText(){
+document.getElementById('Rsec').innerHTML=Texts[count];
+count++;
+if(count==Texts.length){count='0';}
+setTimeout("changeText()",delay*1000);
+}
+
+</script>
+    </body>
+</html>

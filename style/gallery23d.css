@@ -1,0 +1,151 @@
+/*Mergo*/ 
+.direct h3 {
+    text-align: center;
+}
+.direct h3 a{
+    text-decoration: none;
+    color: #ff6666;
+    font-size: 30px;
+    font-style: 'Montserrat';
+}
+
+#foto1 {
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+}
+#foto2 {
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+}
+#foto3 {
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+}
+#foto4 {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+#foto5 {
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+}
+#foto6 {
+    -webkit-transform: skew(20deg);
+    transform: skew(20deg);
+}
+#foto7 {
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+}
+#foto8 {
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+}
+#foto9 {
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+}
+#foto10 {
+    -webkit-transform: translate3d(0,30px,-20px);
+    transform: translate3d(0,30px,-20px);
+}
+#foto11 {
+    -webkit-transform: rotate3d(1,1,1,50deg);
+    transform: rotate3d(1,1,1,50deg);
+}
+#foto12 {
+    width: 200px;
+                height: 200px;
+                -webkit-transition: width 3s, height 2s, transform 2s;
+                transition: width 3s, height 2s, transform 2s;
+}
+#foto12 :hover{
+    width: 300px;
+    height: 300px;
+    -webkit-transform: rotate(250deg);
+    transform:rotate(250deg);
+}
+#btn1{
+    margin-left: 20px;
+    background-color: #2ecc71;
+    cursor:pointer;
+    height: 40px;
+    width: 140px;
+    border-radius:10px;
+    font-size: 20px;
+    font-family: 'Montserrat';
+  
+}
+#btn2{
+    margin-left: 40px;
+    background-color: #2ecc71;
+    cursor:pointer;
+    height: 40px;
+    width: 170px;
+    border-radius:10px;
+    font-size: 20px;
+    font-family: 'Montserrat';
+  
+}
+/*Iliriana*/ 
+
+.videos {
+    margin-left: 300px;
+}
+.paragraph{
+    font-family:'Quicksand', sans-serif;
+    text-align: center;
+}
+
+.gallery{
+   margin-left: 100px;
+   align-items: center;
+   position: absolute;
+
+
+}
+
+.gallery img{
+    padding: 5px;
+    border: solid 2px #2ecc71;
+    
+      
+}
+.gallery img:hover{
+    transform:scale(1.1);
+    
+  
+}
+
+
+#hide{
+    height: 40px;
+    width: 140px;
+    border-radius: 10px;
+    background-color: #2ecc71;
+    cursor:pointer;
+    font-size: 20px;
+    font-family: 'Montserrat';
+ 
+}
+#show{
+    background-color: #2ecc71;
+    cursor:pointer;
+    font-size: 20px;
+    font-family: 'Montserrat';
+    height: 40px;
+    width: 140px;
+    border-radius: 10px;
+}
+.gallery .multiple
+{
+    column-count: 4;
+}
+
+
+#btn1{
+    background-color: #2ecc71;
+    cursor:pointer;
+    font-size: 1.1rem;
+  
+}

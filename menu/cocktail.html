@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <html manifest="manifest.appcache">
+        <head>
+        <meta charset="utf-8">
+        <title>Restaurant Alinea</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="../style/all.css">
+        <link rel="stylesheet" href="../style/style.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!--Per Ikona-->
+        <link rel="stylesheet" href="../style/menu.css">
+    </head>
+    
+    <body>
+        <!--Header-->
+        <header id="main-header">
+            <div class="container">
+                     <nav id="navbar">
+                        <img src="../img/Capture.jpg" width="254" height="80">
+                         <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="menu.html">Menu</a></li>
+                            <li><a href="../reservation.html">Reservation</a></li>
+                            <li><a href="../gallery.html" >Gallery</a></li>
+                            <li><a href="../login.html">Login</a></li>
+                            <li><a href="../other.html">Other</a></li>
+                         </ul>
+                     </nav>
+                     </div>
+                    </header>
+
+                    <div class="menu1">
+                        <div class="menunavbar1">
+                            <h3>MENU</h3>
+                        </div>
+                         <div class="ushqimet1">
+                            <ul>
+                                <li><a href="coffe.html">Coffee</a></li>
+                                <li><a href="soups.html">Soups</a></li a>
+                                <li><a href="breakfast.html">Breakfast</a></li>
+                                <li><a href="lunch.html">Lunch</a></li>
+                                <li><a href="dinner.html">Dinner</a></li>
+                                <li><a href="cocktail.html">Cocktail</a></li>
+                            </ul>
+                         </div>
+                         <div class="coffefoto">
+                         <div class="coffe1">
+                             <img src="ushqimet/cocktail.png" width="350" height="180">
+                             <h3>Amaretto Cocktail <span style="color:#ff6666">4.00€</span></h3>
+                        </br>
+                        <p>Turmeric Powder,Fresh Ginger,Apple,Lemon Juice</p>
+                            </div>
+                            <div class="coffe2">
+                                <img src="ushqimet/cocktail1.png" width="350" height="180">
+                                <h3>Mojito <span style="color:#ff6666">4.70€</span></h3>
+                           </br>
+                           <p>Fresh Orange Juice,Lemon juice,Turmeric Powder,Superfood Powders</p>
+                               </div>
+                               <div class="coffe3">
+                                <img src="ushqimet/cocktail2.png" width="350" height="180">
+                                <h3>Sweet Poison <span style="color:#ff6666">3.20€</span></h3>
+                           </br>
+                           <p>Organic Superfood Powders,Lemon Juice, Green Detox Mix</p>
+                               </div>
+                            </div>
+                    </div>
+
+                 
+<!--Mergo-->
+<div class="footer">
+    <div class="footer-bottom">
+        &copy; Copyright 2020 - All Rights Reserved - (GRUPI 18)
+    </div>
+        <div class="footer-upper">
+            <div class="footer-upper-1">
+            <h3><span style="color:rgb(49, 146, 86)">About</span> US</h3>
+            <img scr="../img/chef-1.jpg">
+            <p>A restaurant is a place where cooked food is sold to the public, and where people sit down to eat it. It is also a place where people go to enjoy the time and to eat a meal.
+            <button type="button">Read More</button>
+            <p id="hiddenMessage" style="display:none">Blla blla</p>
+    </div>
+    <div class="footer-upper-2">
+        <h3><span style="color:rgb(49, 146, 86)">Quick</span> Links</h3>
+    </br>
+        <h4 style="color: rgb(194, 166, 55)">Read More About Food</h4>
+    </br>
+            <ul>
+            <li><i class="tiny material-icons">input</i><a href="http://www.ncausa.org/about-coffee">Coffee</li></a>
+            <li><i class="tiny material-icons">input</i><a href="https://en.wikipedia.org/wiki/Soup">Soups</li></a>
+            <li><i class="tiny material-icons">input</i><a href="https://en.wikipedia.org/wiki/Breakfast">Breakfast</li></a>
+            <li><i class="tiny material-icons">input</i><a href="https://en.wikipedia.org/wiki/Lunch">Lunch</li></a>
+            <li><i class="tiny material-icons">input</i><a href="https://www.foodnetwork.com/recipes/photos/30-minute-dinner-recipes">Dinner</li></a>
+            <li><i class="tiny material-icons">input</i><a href="https://vinepair.com/articles/50-most-popular-cocktails-world-2017/">Cocktail</li></a>
+            </ul>
+    </div>
+    <div class="footer-upper-3">
+        <h3><span style="color:rgb(49, 146, 86)">Lastes</span> Posts</h3>
+    </br>
+            <h4>Valentine's Day</h4>
+            <p>Get a table today and get 50% OFF</p>
+            <button  onclick="window.location.href='reservation.html'">Get a Table</a></button>
+</br>
+            <h4>Mother's Day</h4>
+            <p>15% OFF ,If you get +3 Tickets</p>
+</br>
+            <button  onclick="window.location.href='reservation.html'">Get a Tickets</button>
+    </div>
+    <div class="footer-upper-4">
+        <h3>Contact</h3>
+        <form>
+        <input id="textstorage" type="text" placeholder="Name">
+        <input id="emailstorage" type="email" placeholder="Email">
+        <input id="subjectstorage" type="subject" placeholder="Subject">
+        <input id="messagestorage" type="message" placeholder="Message">
+        <button type="button" id="buttonstorage">Sumbit</button>
+    </br>
+</form>
+
+
+            
+    </div>
+        
+        </div>
+        <!--Mergo-->
+        <script> // Per local storage ,session Storgae
+            let contacts = [];
+            const addContact = (ev)=>{
+                ev.preventDefault();  //permos mu bo refresh faqja(mun hup sessionStorage)
+                let contact = {
+                    textstorage: document.getElementById('textstorage').value,
+                    emailstorage: document.getElementById('emailstorage').value,
+                    subjectstorage: document.getElementById('subjectstorage').value,
+                    messagestorage: document.getElementById('messagestorage').value
+
+                }
+                contacts.push(contact);
+                document.forms[0].reset(); // per me fshi qka ke shkru maheret 
+                //me ru localStorage
+                localStorage.setItem('ContactListLocalStorage', JSON.stringify(contacts) )
+                //me ru sessionStorage
+                sessionStorage.setItem('ContactListSessionStorage', JSON.stringify(contacts) );
+            }
+            document.addEventListener('DOMContentLoaded', ()=>{
+                document.getElementById('buttonstorage').addEventListener('click', addContact);
+            });
+        </script>
+    </body>
+<!--Mergo-->
+</html>

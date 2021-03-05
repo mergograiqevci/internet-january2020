@@ -1,0 +1,142 @@
+/*mergo*/
+.menu {
+    width: 100%;
+    color:black;
+    height: 1100px;
+    position:relative;
+}
+.menu .ushqimet {
+    text-align: center;
+    width: 100%;
+    height: 20px;
+    background-color: white;
+    line-height: 30px;
+    border:1px;
+    display: inline-block;
+}
+.menu .ushqimet ul li {
+    border: 1px;
+    display: inline-block;
+    flex: 1px;
+}
+.menu .ushqimet ul li a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+    padding:20px;
+    display: inline-block;
+}
+
+.menu .menunavbar {
+    height:360px;
+    background-image: url(../img/menu-bg.jpg);
+}
+
+.menu .menunavbar h3 {
+    font-size: 70px;
+    color:#fff;
+    text-align: center;
+}
+.menu .ushqimetfoto {
+    height: 820px;
+    background: #fff;
+}
+
+.menu .ushqimi1 {
+    padding:25px;
+    padding-left: 13%;
+    display: flex;
+    width: 25%;
+    display: inline-block;
+    border:1px black;
+}
+.menu .ushqimi2 {
+    width: 25%;
+    display: inline-block;
+}
+.menu .ushqimi3 {
+    width: 25%;
+    display: inline-block;
+}
+.menu .ushqimi4 {
+    padding:25px;
+    padding-left: 13%;
+    display: flex;
+    width: 25%;
+    display: inline-block;
+    border:1px black;
+}
+.menu .ushqimi5 {
+    width: 25%;
+    display: inline-block;
+}
+.menu .ushqimi6 {
+    width: 25%;
+    display: inline-block;
+}
+
+.menu1 {
+    width: 100%;
+    color:black;
+    height: 730px;
+    position:relative;
+}
+.menu1 .ushqimet1 {
+    text-align: center;
+    width: 100%;
+    height: 20px;
+    background-color: white;
+    line-height: 30px;
+    border:1px;
+    display: inline-block;
+}
+.menu1 .ushqimet1 ul li {
+    border: 1px;
+    display: inline-block;
+    flex: 1px;
+}
+.menu1 .ushqimet1 ul li a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+    padding:20px;
+    display: inline-block;
+}
+
+.menu1 .menunavbar1 {
+    height:360px;
+    background-image: url(../img/menu-bg.jpg);
+}
+
+.menu1 .menunavbar1 h3 {
+    font-size: 70px;
+    color:#fff;
+    text-align: center;
+}
+
+.menu1 .coffefoto {
+    height: 300px;
+    background: #fff;
+}
+
+.coffefoto .coffe1 {
+    padding:25px;
+    padding-left: 13%;
+    display: flex;
+    width: 25%;
+    display: inline-block;
+    border:1px black;
+}
+.coffefoto .coffe2 {
+    width: 25%;
+    display: inline-block;
+}
+.coffefoto .coffe3 {
+    width: 25%;
+    display: inline-block;
+}
+/*mergo*/
+
+
+
+

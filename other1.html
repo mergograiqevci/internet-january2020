@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <title>Restaurant Alinea</title>
+    <link rel="stylesheet" href="style/other1.css">
+    <style>
+    #pertjera {
+    background-color: #ffffff;
+}
+#pertjera a{
+    height: 150px;
+    font-size: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align:center;
+    margin-left: 610px;
+    text-decoration: none;
+    color: #ff6666;
+    
+}</style>
+<body>
+  <h1 id="pertjera"><a href="other2.html">Other Plugins</a></h1>
+<div id="bla">
+<p>(Error Test) Please input a number between 10 and 100:</p>
+
+<input id="inputi" type="text">
+</br>
+</br>
+<button type="button" onclick="myFunction()">Test Input</button>
+<p id="message"></p>
+</div>
+<script>
+function myFunction() {
+  var message, x;
+  message = document.getElementById("message");
+  message.innerHTML = "";
+  x = document.getElementById("inputi").value;
+  try { 
+    if(x == "")  throw "is Empty";
+    if(isNaN(x)) throw "not a number";
+    if(x > 100)   throw "too high";
+    if(x < 10)  throw "too low";
+    if (x >=10 || x <=100) throw "is correct";
+  }
+  catch(err) {
+    message.innerHTML = "Input " + err;
+  }
+}
+</script>
+  
+</body>
+</html>

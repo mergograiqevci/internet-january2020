@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html manifest="manifest.appcache">
+    <head>
+        <title>Register | Restaurant Alinea</title>
+        <script type="text/javascript" src="style/storage.js"></script>
+        <!--Jetlira-->
+        <style>
+            
+            label {
+                color:lightgray;
+                font: normal 15px/1.3 "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+               }
+            
+            table {
+                     margin:auto;
+               }
+               
+            input,select {
+                   font-family: "Lucida Sans Unicode",Arial,Helvetica, sans-serif;
+                   border-radius: 5px;
+                   }
+            input:focus{
+                          background-color: lightcyan;
+                   }
+             input:hover{
+                     background-color:lightblue;  
+                   } 
+             #headhead{  
+                 font-family: "Lucida Sans Unicode",Arial,Helvetica, sans-serif;
+                     color:lightblue;
+                     font-size: 25px;
+                     font-size:1.5625em;
+                     text-align: center;
+             }
+             .submit{
+                 margin-left: 80px;
+                 
+                 background-color:rgb(35,91,224);
+                 border-radius:10px;
+                 padding: 3px 30px;
+                 color:lightblue;
+                 border-color:rgb(35,91,224);
+                 border-width: 1px;
+             }
+             .submit:hover{
+                 background-color:rgb(35,120,255);
+                 color:white;
+             }
+             .submit:focus{
+                 background-color:rgb(35,91,224);
+             }
+             #pen img{
+                 width: 280px;
+                 height: 280px;
+                 float:right;
+                 position:absolute;
+                 top:160px;
+                 right:180px
+                }
+               #Rform{
+                    background-image: url("Glyph letters.png")        
+                }
+        </style>
+          <script>
+           function validateForm() {
+                //Fist Name
+                var fname=document.forms["Rform"]["fName"].value;
+                try {
+                    var letters = /^([A-Za-z]{3,})$/;
+                    if(!fname.match(letters)) throw "Name must contain only letters and be at least 3 characters long!";    
+                }
+                catch(err) {
+                    
+                    alert(err);
+                    return false;
+                }
+                //Middle Name
+                      var mName=document.forms["Rform"]["mName"].value;
+                try {
+                    
+                       var letters = /^[A-Za-z]*$/;
+                    if(!mName.match(letters)) throw "Middle name must contain only letters!";    
+                }
+                catch(err) {
+                    
+                    alert(err);
+                    return false;
+                }
+                  //Last Name
+                var lname=document.forms["Rform"]["lName"].value;
+                try {
+                    var letters = /^([A-Za-z]{3,})$/;
+                    if(!lname.match(letters)) throw "Last name must contain only letters and be at least 3 characters long!";    
+                }
+                catch(err) {
+                    
+                    alert(err);
+                    return false;
+                }
+                //Date
+                
+                
+                var dBirth=document.forms["Rform"]["dBirth"].value;
+                try {
+                    
+                    
+                    var letters= (/^((0[1-9])|(1[0-9])|(2[0-9])|(3[0-1]))\/((0[1-9])|(1[0-2]))\/(\d{4})$/);
+                    if(!dBirth.match(letters)) throw "Enter a valid birthdate!";    
+                }
+                catch(err) {
+                    
+                    alert(err);
+                    return false;
+                }
+                 //user
+                var user=document.forms["Rform"]["user"].value;
+                try {
+                    
+                    
+                    var letters= /^(.+){3,20}$/;
+                    if(!user.match(letters)) throw "Username must be at least 3 characters long!";    
+                }
+                catch(err) {
+                    
+                    alert(err);
+                    return false;
+                }
+                  //Password
+                var pass1=document.forms["Rform"]["pass1"].value;
+                try {
+                    var letters = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+                    if(!pass1.match(letters)) throw "Password must contain an uppercase letter, a number and be at least 8 characters long";    
+                }
+                catch(err) {
+                    
+                    alert(err);
+                    return false;
+                }
+                var pass1 = document.forms["Rform"]["pass1"].value;
+                var pass2 = document.forms["Rform"]["pass2"].value;
+                if(pass1 !== pass2){
+                    alert("Passwords do not match!");
+                     return false;
+                }
+                //email
+                var email1=document.forms["Rform"]["email1"].value;
+                try {
+                    
+                    
+                    var letters= /^(.+)@[a-z]+\.([a-z]{2,})$/;
+                    if(!email1.match(letters)) throw " Enter a valid email!";    
+                }
+                catch(err) {
+                    
+                    alert(err);
+                    return false;
+                }
+                var Vemail1 = document.forms["Rform"]["email1"].value;
+                var Vemail2 = document.forms["Rform"]["email2"].value;
+                if(Vemail1 !== Vemail2){
+                    alert("Emails do not match!");
+                     return false;
+                }
+            }
+          
+            $(document).ready(function(){
+             $(".submit").mouseover(function(){
+             $(".submit").animate.attr("value")({color:'red'}, "slow");
+                        });
+                    });
+        </script>
+         </head>
+    <body style="background-color:#333333;" onload="get_fName(),get_mName(),get_lName(),get_dBirth(),get_user()">
+         
+        
+        <!-- Header -->
+        
+        <header>
+            
+        </header>
+    
+        <div id="mainmain"> 
+               <span id="pen">
+                             <img src='img/pen.png' alt='pen'>
+              </span>
+        <form id='Rform' action='Redirect.html' onsubmit=" return validateForm()">
+             <table>
+                <th id="headhead">
+                    <p>Register a new Account</p><hr style="width:100%;">
+                    <font face="sans-serif,serif,Times New Roman" color='white' size='3em'>Please fill this form carefully!
+                    <mark>Some fields cannot be undone!</mark></font>
+                    
+                </th>
+                <tr>
+                    <td>
+                        <p>
+                            <label>First Name</label></br>
+                            <input id="fName"  type="text" name="name" size="25" placeholder="Type your name" onblur="set_fName()" />
+                        </p>
+                        <p>
+                            <label>Middle Name (Optional)</label></br>
+                            <input id="mName" type="text" name="middlename" size="25" placeholder="Type your middle name" onblur="set_mName()"/>
+                        <p>
+                            <label>Last Name</label></br>
+                        <input id="lName" type="text" name="surname" size="25" placeholder="Type your last name" onblur="set_lName()"/>
+                        </p>
+                        <p>
+                            <label>Date of Birth</label></br>
+                            <input id="dBirth" type="text" name="birthdate" size="11" placeholder="dd/mm/yyyy" onblur="set_dBirth()"/>
+                        </p>
+                        <p>
+                    
+                            <label>Gender</label></br>
+                            <select name="gender">
+                                <option>Hide Gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label>Country</label></br>
+                            <select name="country">
+                                <option>Kosovo</option>
+                                <option>Albania</option>
+                                <option>International</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label>Username</label></br>
+                            <input id="user" type="text" name="username" size="25" placeholder="Type your account name" onblur="set_user()"/>
+                        </p>
+                        <p>
+                            <label>Password</label></br>
+                            <input id="pass1"  type="password" name="password" size="25" placeholder="Type your password">
+                            <input id="pass2" type="password" name="password" size="25" placeholder="Confirm your password">
+                        </p>
+                         <p>
+                            <label>E-mail Address</label></br>
+                            <input id="email1" type="text" name="email1" size="25" placeholder="youremail@example.com"/>
+                            <input id="email2" type="text" name="email2" size="25" placeholder="Confirm your email"/>
+                         </p>
+                   </td>
+                 </tr>
+
+            </table>
+                        <p style="margin-left:30.5%;">
+                            <input  type="submit" class="submit" value="Create Account">
+                            <input  type="reset" class="submit" value="Reset Form">
+                        </p>
+                      
+        </form>
+            </div>
+
+                   
+    </body>
+</html>
+
